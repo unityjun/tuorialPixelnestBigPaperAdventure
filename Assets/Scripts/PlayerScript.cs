@@ -85,7 +85,7 @@ public class PlayerScript : MonoBehaviour
 	void FixedUpdate()
 	{
 		// 5 - Move the game object
-		rigidbody2D.velocity = movement;
+		GetComponent<Rigidbody2D>().velocity = movement;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -149,7 +149,7 @@ public class PlayerScript : MonoBehaviour
 		
 		//Debug.Log(Angle);
 		
-		transform.rigidbody2D.MoveRotation(Angle);
+		transform.GetComponent<Rigidbody2D>().MoveRotation(Angle);
 	} 
 
 	void Shoot(){
@@ -175,7 +175,7 @@ public class PlayerScript : MonoBehaviour
 		                                     ,transform.position.y + y_offset
 		                                     ,0);
 		
-		shotT.rigidbody2D.MoveRotation(cursoreAngle);
+		shotT.GetComponent<Rigidbody2D>().MoveRotation(cursoreAngle);
 		
 		// The is enemy property
 		ShotScript shot = shotT.gameObject.GetComponent<ShotScript>();
